@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,6 +25,13 @@
 </head>
 <body>
     <h1>Hello, I'm a shoe</h1>
-    <button>Buy me</button>
+    <button id="buyMeButton">Buy me</button>
+    <!--Facebook pixel event-->
+    <script type="text/javascript">
+        $("#buyMeButton").click(function() {
+            fbq('track', 'Purchase'), {currency:"EUR", value:"30.00"};
+        });
+    </script>
+    <!--End of Facebook pixel event-->
 </body>
 </html>
